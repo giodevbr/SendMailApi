@@ -18,7 +18,7 @@ jobs:
           password: ${{ secrets.DOCKER_HUB_TOKEN }}
 
     - name: Build Docker image
-      run: docker build -t giodevbr/sendmailapi:latest .
+      run: docker build -t 1giodev/sendmailapi:latest .
 
     - name: Push Docker image to Docker Hub
-      run: docker push giodevbr/sendmailapi:latest
+      run: docker push 1giodev/sendmailapi:latest
