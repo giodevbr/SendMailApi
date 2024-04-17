@@ -56,6 +56,13 @@ app.MapPost("/SendMail", async (Mail Mail) =>
     }
 }).WithName("SendMail").Produces<Return>();
 
+app.MapPost("/ValidMail", (string? mail) =>
+{
+    if (string.IsNullOrEmpty(mail))
+        return Results.BadRequest(new Return(false, "O e-mail não é válido."));
+    else
+        return Results.Ok(new Return(true, "O e-mail é válido."));
+}).WithName("ValidMail").Produces<Return>();
 
 app.Run();
 
